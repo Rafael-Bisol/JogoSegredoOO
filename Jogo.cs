@@ -1,11 +1,11 @@
 namespace JogoSegredoOO
 {
-    class Segredo
+    class Jogo
     {
         public string segredo;
         public string dica;
 
-        public bool jogada(string tentativa)
+        public bool Resultado(string tentativa)
         {
             return segredo == tentativa;
         }
