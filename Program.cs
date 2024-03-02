@@ -6,26 +6,27 @@ namespace JogoSegredoOO
     {
         static void Main(string[] args)
         {
+            Jogo jogo = new Jogo();
+
             Console.WriteLine("Bem-vindo ao jogo de adivinhar o segredo!");
             Console.Write("Comece digitando o segredo: ");
-            string segredo = Console.ReadLine().ToLower();
+            jogo.segredo = Console.ReadLine().ToLower();
             Console.Write("Agora digite uma descrição do segredo: ");
-            string dica = Console.ReadLine();
+            jogo.dica = Console.ReadLine();
 
             Console.Clear();
             Console.WriteLine("Você tem 5 tentativas! Boa sorte!");
-            Console.WriteLine("Sua dica é: " + dica);
+            Console.WriteLine("Sua dica é: " + jogo.dica);
 
-            bool resultado = false;
-            for (int i = 1; i <= 5 && !resultado; i++)
+            for (int i = 1; i <= 5; i++)
             {
                 Console.Write($"Tentativa nº{i}: ");
                 string tentativa = Console.ReadLine().ToLower();
-                resultado = tentativa == segredo;
 
-                if (resultado)
+                if (jogo.Resultado(tentativa))
                 {
-                    Console.Write("Você ganhou! Parabéns!");
+                    Console.WriteLine("Você ganhou! Parabéns!");
+                    break;
                 }
                 else
                 {
