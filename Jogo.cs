@@ -26,5 +26,9 @@ namespace JogoSegredoOO
             this.dica = dica;
         }
 
+        public override string ToString()
+        {
+            return $"Segredo: {segredo}\nDica: {dica}";
+        }
     }
 }
