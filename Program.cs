@@ -6,11 +6,15 @@ namespace JogoSegredoOO
     {
         static void Main(string[] args)
         {
-            Jogo jogo = new Jogo();
+            
+            string segredo;
 
             Console.WriteLine("Bem-vindo ao jogo de adivinhar o segredo!");
             Console.Write("Comece digitando o segredo: ");
-            jogo.segredo = Console.ReadLine().ToLower();
+            segredo = Console.ReadLine().ToLower();
+            
+            Jogo jogo = new Jogo(segredo);
+
             Console.Write("Agora digite uma descrição do segredo: ");
             jogo.dica = Console.ReadLine();
 

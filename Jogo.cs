@@ -9,5 +9,22 @@ namespace JogoSegredoOO
         {
             return segredo == tentativa;
         }
+
+        // Valor inicial, caso não declarado
+        public Jogo(){
+            segredo = "";
+            dica = "";
+        }
+        
+        // É possível só enviar um argumento ao objeto Jogo
+        public Jogo(string segredo) {
+            this.segredo = segredo;
+        }
+
+        // Também é possível enviar dois argumentos
+        public Jogo(string segredo, string dica) : this(segredo) {
+            this.dica = dica;
+        }
+
     }
 }
